@@ -10,13 +10,10 @@ namespace Mekashron.WSDL.Controllers
     public class HomeController : Controller
     {
         private readonly IToastifyService _toastyf;
-        private readonly ILogger<HomeController> _logger;
         private readonly IICUTech _webService;
-        public HomeController(ILogger<HomeController> logger,
-            IToastifyService toastyf, 
+        public HomeController(IToastifyService toastyf, 
             IICUTech webService)
         {
-            _logger = logger;
             _toastyf = toastyf;
             _webService = webService;
         }
@@ -40,7 +37,9 @@ namespace Mekashron.WSDL.Controllers
             }
             else
             {
-                _toastyf.Success("Success: EntityId: " + jObject["EntityId"] + " FirstName: " + jObject["FirstName"] + " LastName: " + jObject["LastName"]);
+                _toastyf.Success("Success: EntityId: " + jObject["EntityId"] 
+                    + " FirstName: " + jObject["FirstName"] 
+                    + " LastName: " + jObject["LastName"]);
             }
 
             return View();

@@ -28,7 +28,12 @@ namespace Mekashron.WSDL
         {
             services.AddControllersWithViews();
             services.AddScoped<IICUTech, ICUTechClient>();
-            services.AddToastify(config => { config.DurationInSeconds = 5; config.Position = Position.Right; config.Gravity = Gravity.Top; });
+            services.AddToastify(config =>
+            {
+                config.DurationInSeconds = 5; 
+                config.Position = Position.Right; 
+                config.Gravity = Gravity.Top;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
